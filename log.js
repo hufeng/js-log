@@ -11,5 +11,7 @@ module.exports = function() {
   // Do NOT print `log(msg)` in non-debug mode
   isDebug &&
   // Call native method of console
+  // if not pass 'console' as first argument, 
+  // chrome error!
   console.log.apply(console, arguments);
 }
