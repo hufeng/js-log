@@ -4,9 +4,12 @@
  *  log("message") ==> console.log("message")
  *  log("message", "warn") ==> console.warn("message")
  */
-module.exports = function() {
-  var isDebug = parent.window.location.hash === '#debug';
-	
+
+//cache current location hash, when the module loading
+//only fetch hash one time.
+var isDebug = parent.window.location.hash === '#debug';
+
+module.exports = function() {	
   window.console &&
   // Do NOT print `log(msg)` in non-debug mode
   isDebug &&
